@@ -44,6 +44,21 @@ async function httpLogin (username, password) {
     return result.data;
 }
 
+async function httpMakePost(id, post) {
+    await axios.post('http://localhost:8080/post', {
+        userId : id,
+        post : post
+    })
+}
+
+async function httpPostComment(postid, userid, c) {
+    await axios.post('http://localhost:8080/post/comment', {
+        postId : postid,
+        userId : userid,
+        comment : c
+    })
+}
+
 const httpCreateAccount = (fn, ln, em, un, pw) => {
     // Send to backend
     console.log(`First name ${fn}`);
@@ -54,7 +69,6 @@ const httpCreateAccount = (fn, ln, em, un, pw) => {
 }
 
 async function httpGetContent (user_id) {
-    
     await axios.get(`http://localhost:8080/user/friends_post/${user_id}`)
     .then(function (response) {
         return response.data;
@@ -63,7 +77,10 @@ async function httpGetContent (user_id) {
         console.log(error)
     })
 }
+
 export {
     httpGetContent,
-    httpLogin
+    httpLogin,
+    httpMakePost,
+    httpPostComment
 }

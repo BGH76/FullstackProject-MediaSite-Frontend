@@ -94,3 +94,15 @@
 .post-reply-textarea {
   display: none;
 }
+.ui.container.post-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.post-box {
+  width: 400px;
+}
+.post-btn {
+  margin-left: 10px;
+  height: 38px;
+}

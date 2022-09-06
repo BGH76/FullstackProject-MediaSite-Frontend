@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { httpPostComment } from "../actions";
 
 const PostCard = (props) => {
 
@@ -10,7 +11,6 @@ const PostCard = (props) => {
         if(!props.comment)return;
         return Object.values(props.comment).map((m) => {
             return(
-                //need post Id
                 <div key={m.commentId} className={`${showComments}`}>
                     <h5 className="comment-name">{m.commentName}</h5>
                     <p className="post comment">{m.comment}</p>
@@ -19,10 +19,10 @@ const PostCard = (props) => {
         })
     }
     
-    const submitComment = (e) => {
-        console.log(text);
-        // send to /post/comment send postId, userId, comment(text)
+    const submitComment = async () => {
+        await httpPostComment(props.postId, localStorage.getItem('userId'), text);
         setShowTextField('post-reply-textarea')
+        setText('');
     }
 
     return(
@@ -64,10 +64,3 @@ const PostCard = (props) => {
     );
 }
 export default PostCard;
-
-// type="text" 
-// name="username" 
-// value={`${username}`} 
-// onChange={(e)=>setUsername(e.target.value)} 
-// onFocus={()=>setUsernameError('hidden')} 
-// placeholder="username"

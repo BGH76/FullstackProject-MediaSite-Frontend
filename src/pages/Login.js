@@ -14,13 +14,6 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if(username === '' || password === '') return;
-        // const result = httpLogin(username, password);
-        // const result1 = {status: 'valid', User_Id : 1} // result1 for testing
-        // const result = axios.post('/login',
-        //     {
-        //         userName : username,
-        //         password : password
-        //     });
         const result = await httpLogin(username, password);
         if(result.status === true && result.user_Id !== 0) {
             localStorage.setItem("loggedIn", true);

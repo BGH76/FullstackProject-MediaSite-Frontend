@@ -17,12 +17,6 @@ const CreateAccount = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorConfirmedPassword, setErrorConfirmedPassword] = useState('hidden');
 
-    // useEffect(() => {
-    //     if(localStorage.getItem('Logged_In') !== 'true') {
-    //         navigate('/');
-    //     }
-    // })
-
     const handleSubmit = (e) => {
         if(!email.match(/\S+@\S+\.\S+/)) {
             setErrorEmail('');
