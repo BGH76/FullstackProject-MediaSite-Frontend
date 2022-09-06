@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+/* Login Page */
+.loginbox {
+  width: 300px;
+  margin: 150px auto;
+  border: solid;
+  border-width: .3px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ui.form.login {
+    padding: 25px 15px 0 15px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-title {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 25px;
+  font-family: 'Oooh Baby', cursive;
+  font-size: 3rem;
+  font-weight: 600;
+  color: blueviolet;
+}
+.ui.button {
+  background-color: rgb(138, 43, 226, .3);
+  font-size: 1.1rem;
+  width: 160px;
+}
+.btn-div {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.btn-div.b {
+  margin-bottom: 20px;
+}
+.error.hidden {
+  visibility: hidden;
+}
+.error {
+  font-size: .8rem;
+  color: red;
 }
 
-.App-link {
-  color: #61dafb;
+/* Create Account Box */
+.create-account-box {
+  width: 600px;
+  margin: 100px auto;
+  border: solid;
+  border-width: .3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.six.wide.column.logout {
+  display: flex;
+  justify-content:end;
+}
+.ui.red.button {
+  width: 90px;
+}
+.ui.container.grid.header {
+  margin-top: 25px;
+}
+.ui.container.post-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.ui.card {
+  width: 590px;
+}
+.eight.wide.column.comments {
+  display: flex;
+  justify-content: right;
+}
+.meta:hover {
+  cursor: pointer;
+}
+.post.comment {
+  color: black;
+  padding-left: 10px;
+}
+.extra.content.post-comments {
+  display: none;
+}
+.extra.content.show {
+  background-color: rgb(240, 248, 255, .4);
+}
+.comment-name {
+  margin-bottom: 5px;
+}
+.user-name-title {
+  display: flex;
+  justify-content: center;
+  font-family: 'Oooh Baby', cursive;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+.post-reply-textarea {
+  display: none;
 }
