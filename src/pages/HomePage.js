@@ -22,7 +22,6 @@ const HomePage = () => {
         async function getData() {
             await axios.get(`http://localhost:8080/user/friends_post/${localStorage.getItem('userId')}`)
         .then(function (response) {
-            console.log(response.data)
             setPostList(response.data)
         })
         .catch(function (error) {
