@@ -20,13 +20,12 @@ const HomePage = () => {
 
     useEffect(  () => {    
         async function getData() {
-            await axios.get(`http://localhost:8080/user/friends_post/${localStorage.getItem('userId')}`)
-        .then(function (response) {
-            setPostList(response.data)
-        })
-        .catch(function (error) {
-            console.log(error)
-        })
+            try {
+                const temp = await httpGetContent(localStorage.getItem('userId'));
+                setPostList(temp);
+            } catch(e) {
+                console.log(e);
+            }
         }
         getData();
     },[]);

@@ -69,12 +69,19 @@ const httpCreateAccount = (fn, ln, em, un, pw) => {
 }
 
 async function httpGetContent (user_id) {
-    await axios.get(`http://localhost:8080/user/friends_post/${user_id}`)
-    .then(function (response) {
-        return response.data;
-    })
-    .catch(function (error) {
-        console.log(error)
+    const response = await axios.get(`http://localhost:8080/user/friends_post/${user_id}`);
+    return response.data;
+}
+
+async function httpGetAllUsers(id) {
+    const response = await axios.get(`http://localhost:8080/users/${id}`);
+    return response.data;
+}
+
+async function httpAddFriend(userOne, userTwo) {
+    await axios.post('http://localhost:8080/login/friend_request', {
+        userOneId : userOne,
+        userTwoId : userTwo
     })
 }
 
@@ -82,5 +89,7 @@ export {
     httpGetContent,
     httpLogin,
     httpMakePost,
-    httpPostComment
+    httpPostComment,
+    httpGetAllUsers,
+    httpAddFriend
 }

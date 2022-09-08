@@ -52,6 +52,7 @@
 }
 .ui.red.button {
   width: 90px;
+  height: 40px;
 }
 .ui.container.grid.header {
   margin-top: 25px;
@@ -105,4 +106,25 @@
 .post-btn {
   margin-left: 10px;
   height: 38px;
+}
+.ui.cards.user-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+.header.user-list-header {
+  font-size: 1.5rem;
+  padding: 5px 5px 5px 5px;
+}
+.ui.bottom.attached.button {
+  height: 25px;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: rgb(138, 43, 226, .4);
+}
+.home-link:hover {
+  cursor: pointer;
+}
+.add-friend-link:hover {
+  cursor: pointer;
 }
